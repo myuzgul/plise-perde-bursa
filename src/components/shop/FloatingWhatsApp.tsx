@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import { MessageCircle } from 'lucide-react';
@@ -7,11 +7,11 @@ interface FloatingWhatsAppProps {
   phone?: string;
 }
 
-export default function FloatingWhatsApp({ phone = '0541 494 51 73' }: FloatingWhatsAppProps) {
+export default function FloatingWhatsApp({ phone = '0532 726 34 74' }: FloatingWhatsAppProps) {
   // Telefon numarasını temizle (sadece rakamlar)
   const cleanPhone = phone.replace(/[^0-9]/g, '');
   const formattedPhone = cleanPhone.startsWith('90') ? cleanPhone : `90${cleanPhone.replace(/^0/, '')}`;
-  const message = encodeURIComponent('Merhaba, perde modelleri ve sipariş hakkında bilgi almak istiyorum.');
+  const message = encodeURIComponent('Merhaba, plise perde modelleri ve siparişim hakkında bilgi almak istiyorum.');
   const whatsappUrl = `https://wa.me/${formattedPhone}?text=${message}`;
 
   return (

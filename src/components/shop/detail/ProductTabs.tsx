@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useEffect } from 'react';
 import { Video, Star, Camera, CheckCircle2, MessageSquarePlus, X, ZoomIn } from 'lucide-react';
@@ -155,9 +155,9 @@ export default function ProductTabs({
   };
 
   return (
-    <div className="border border-slate-200 rounded-sm p-6 mb-16 bg-white">
+    <div className="border border-[#d7d7db] rounded-xl p-6 mb-16 bg-white shadow-xs">
       {/* Yatay Sekme Başlıkları */}
-      <div className="flex flex-wrap gap-6 border-b border-slate-200 pb-3 mb-6">
+      <div className="flex flex-wrap gap-6 border-b border-[#d7d7db] pb-3 mb-6">
         {[
           { id: 'DESC', label: 'Ürün Bilgileri & Özellikler' },
           { id: 'VIDEO', label: 'Montaj & Kurulum Videosu' },
@@ -170,8 +170,8 @@ export default function ProductTabs({
             onClick={() => setActiveTab(tab.id as any)}
             className={`text-xs font-bold transition pb-1 border-b-2 cursor-pointer ${
               activeTab === tab.id
-                ? 'border-slate-900 text-slate-900'
-                : 'border-transparent text-slate-500 hover:text-slate-900'
+                ? 'border-[#C5A059] text-[#C5A059]'
+                : 'border-transparent text-[#49495a] hover:text-[#151523]'
             }`}
           >
             {tab.label}
@@ -181,12 +181,12 @@ export default function ProductTabs({
 
       {/* SEKME 1: ÜRÜN BİLGİLERİ */}
       {activeTab === 'DESC' && (
-        <div className="prose prose-sm max-w-none text-slate-700 leading-relaxed text-xs sm:text-sm">
+        <div className="prose prose-sm max-w-none text-[#49495a] leading-relaxed text-xs sm:text-sm">
           {descriptionHtml ? (
             <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
           ) : (
             <div>
-              <h3 className="text-sm font-bold text-slate-900 mb-2">1. Sınıf Kumaş & Dayanıklı Mekanizma</h3>
+              <h3 className="text-sm font-bold text-[#151523] mb-2">1. Sınıf Kumaş & Dayanıklı Mekanizma</h3>
               <p>Tüm perdelerimiz ISO standartlarında kumaş ve alüminyum mekanizmalar kullanılarak atölyemizde üretilmektedir.</p>
             </div>
           )}
@@ -198,7 +198,7 @@ export default function ProductTabs({
         <div className="space-y-6">
           <div className="max-w-3xl mx-auto">
             {youtubeEmbed ? (
-              <div className="aspect-video w-full rounded-sm overflow-hidden border border-slate-300 shadow-sm bg-black">
+              <div className="aspect-video w-full rounded-xl overflow-hidden border border-[#d7d7db] shadow-sm bg-black">
                 <iframe
                   src={youtubeEmbed}
                   title="Perde Montaj ve Kurulum Videosu"
@@ -208,11 +208,11 @@ export default function ProductTabs({
                 />
               </div>
             ) : (
-              <div className="aspect-video w-full rounded-sm overflow-hidden border border-slate-300 bg-slate-950 flex flex-col items-center justify-center text-white p-6 text-center space-y-3">
-                <Video className="w-12 h-12 text-[#1B84F8]" />
+              <div className="aspect-video w-full rounded-xl overflow-hidden border border-[#2a2a3c] bg-[#151523] flex flex-col items-center justify-center text-white p-6 text-center space-y-3">
+                <Video className="w-12 h-12 text-[#C5A059]" />
                 <div>
-                  <h4 className="text-sm font-bold">Kolay ve Hızlı Perde Montajı</h4>
-                  <p className="text-xs text-slate-400 mt-1 max-w-md">
+                  <h4 className="text-sm font-bold text-white">Kolay ve Hızlı Perde Montajı</h4>
+                  <p className="text-xs text-[#b9b9c1] mt-1 max-w-md">
                     Özel ölçülü perdeleriniz pratik montaj aparatları ile birlikte gönderilir. Matkap veya vida kullanmadan kornişe 5 dakikada takabilirsiniz.
                   </p>
                 </div>
@@ -414,7 +414,7 @@ export default function ProductTabs({
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="px-6 py-2.5 bg-[#1B84F8] hover:bg-[#156cd1] text-white rounded-sm text-xs font-bold transition flex items-center gap-2 cursor-pointer shadow-xs disabled:opacity-50"
+                  className="px-6 py-3 bg-[#C5A059] hover:bg-[#B88E28] text-white rounded-xl text-xs font-bold transition flex items-center gap-2 cursor-pointer shadow-[0_2px_6px_rgba(0,0,0,0.2)] disabled:opacity-50"
                 >
                   <CheckCircle2 className="w-3.5 h-3.5" />
                   <span>{submitting ? 'Gönderiliyor...' : 'Yorumu Gönder'}</span>

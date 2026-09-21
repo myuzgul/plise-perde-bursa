@@ -158,7 +158,7 @@ export default function AdminCouponsPage() {
   };
 
   const handleGenerateRandomCode = () => {
-    const prefixes = ['YAZAR', 'PERDE', 'FIRSAT', 'INDIRIM', 'HOSGELDIN', 'YENISEZON'];
+    const prefixes = ['PLISE', 'BURSA', 'PERDE', 'FIRSAT', 'INDIRIM', 'HOSGELDIN', 'YENISEZON'];
     const randomPrefix = prefixes[Math.floor(Math.random() * prefixes.length)];
     const randomNum = Math.floor(10 + Math.random() * 90);
     setFormData((prev) => ({ ...prev, code: `${randomPrefix}${randomNum}` }));
@@ -611,7 +611,7 @@ export default function AdminCouponsPage() {
                     <input
                       type="text"
                       required
-                      placeholder="Örn: YAZAR2026, BAHAR15"
+                      placeholder="Örn: PLISE2026, BAHAR15"
                       value={formData.code}
                       onChange={(e) => setFormData({ ...formData, code: e.target.value.toUpperCase().replace(/\s+/g, '') })}
                       className="flex-1 font-mono uppercase bg-slate-50 border border-slate-300 rounded-xl px-3 py-2.5 font-black text-slate-900 text-sm tracking-wider focus:outline-hidden focus:border-[#1B84F8]"

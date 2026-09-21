@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React from 'react';
 import Link from 'next/link';
@@ -11,34 +11,34 @@ interface PreHeaderProps {
 }
 
 export default function PreHeader({
-  slogan = 'Özel Ölçülü Dikim Atölyesi • Kusursuz Uyum Garantisi',
-  discountText = '1.500 TL Üzeri Ücretsiz Kargo',
-  phone = '+90 212 510 22 55',
+  slogan = "Bursa'nın Lider Plise Perde Üreticisi • Özel Ölçü & Kusursuz Uyum",
+  discountText = 'PLİSE PERDELERDE FABRİKADAN HALKA ÖZEL FİYATLAR • 1.500 TL ÜZERİ ÜCRETSİZ KARGO',
+  phone = '0532 726 34 74',
 }: PreHeaderProps) {
   return (
-    <div className="bg-slate-900 text-slate-300 text-[11px] py-1.5 px-4 border-b border-slate-800">
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-        {/* Sol: Slogan & Güvence */}
-        <div className="hidden lg:flex items-center gap-2 text-slate-300 font-medium">
-          <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+    <div className="bg-[#C5A059] text-white text-[12px] sm:text-[13px] py-2 px-4 border-b border-[#B88E28]">
+      <div className="max-w-[1200px] mx-auto flex items-center justify-between gap-4">
+        {/* Sol: Slogan */}
+        <div className="hidden lg:flex items-center gap-2 text-white/90 font-medium">
+          <ShieldCheck className="w-4 h-4 text-[#EADBBA]" />
           <span>{slogan}</span>
         </div>
 
-        {/* Orta: Kargo & Kampanya Bilgisi */}
-        <div className="flex items-center gap-1.5 font-semibold text-slate-200 mx-auto lg:mx-0">
-          <Truck className="w-3.5 h-3.5 text-[#1B84F8]" />
+        {/* Orta: Kampanya Duyuru Şeridi */}
+        <div className="flex items-center gap-2 font-bold text-white mx-auto lg:mx-0 tracking-wide">
+          <Truck className="w-4 h-4 text-[#EADBBA]" />
           <span>{discountText}</span>
         </div>
 
         {/* Sağ: Sipariş Takibi & Müşteri Hattı */}
-        <div className="hidden sm:flex items-center gap-4 text-slate-300">
-          <Link href="/siparis-takip" className="hover:text-white transition">
+        <div className="hidden sm:flex items-center gap-4 text-white/90 text-xs font-semibold">
+          <Link href="/siparis-takip" className="hover:text-white hover:underline transition">
             Sipariş Takibi
           </Link>
-          <span className="text-slate-700">|</span>
-          <div className="flex items-center gap-1.5 text-slate-300 hover:text-white transition font-medium">
-            <Phone className="w-3 h-3 text-[#1B84F8]" />
-            <a href={`tel:${phone.replace(/\s+/g, '')}`}>{phone}</a>
+          <span className="text-white/40">|</span>
+          <div className="flex items-center gap-1.5 text-white hover:text-white transition">
+            <Phone className="w-3.5 h-3.5 text-[#EADBBA]" />
+            <a href={`tel:${phone.replace(/\s+/g, '')}`} className="font-bold">{phone}</a>
           </div>
         </div>
       </div>

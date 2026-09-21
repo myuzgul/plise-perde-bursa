@@ -6,7 +6,7 @@ import { Lock, Mail, ShieldAlert, ArrowRight, CheckCircle2 } from 'lucide-react'
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState('admin@yazarperde.com');
+  const [email, setEmail] = useState('admin@pliseperdebursa.com.tr');
   const [password, setPassword] = useState('admin123456');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -79,8 +79,8 @@ export default function AdminLoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@yazarperde.com"
-                className="w-full bg-slate-900/60 border border-slate-700 rounded-xl py-3 pl-11 pr-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#1B84F8] focus:ring-2 focus:ring-[#1B84F8]/20 transition-all text-sm"
+                placeholder="admin@pliseperdebursa.com.tr"
+                className="w-full bg-slate-900/60 border border-slate-700 rounded-xl py-3 pl-11 pr-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#C5A059] focus:ring-2 focus:ring-[#C5A059]/20 transition-all text-sm"
               />
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function AdminLoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full bg-slate-900/60 border border-slate-700 rounded-xl py-3 pl-11 pr-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#1B84F8] focus:ring-2 focus:ring-[#1B84F8]/20 transition-all text-sm"
+                className="w-full bg-slate-900/60 border border-slate-700 rounded-xl py-3 pl-11 pr-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#C5A059] focus:ring-2 focus:ring-[#C5A059]/20 transition-all text-sm"
               />
             </div>
           </div>
@@ -105,7 +105,7 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-[#1B84F8] hover:bg-[#156cd1] text-white font-medium py-3 px-4 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-[#1B84F8]/25 transition-all disabled:opacity-50 cursor-pointer"
+            className="w-full bg-[#C5A059] hover:bg-[#B88E28] text-white font-medium py-3 px-4 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-[#C5A059]/25 transition-all disabled:opacity-50 cursor-pointer"
           >
             {loading ? (
               <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -120,7 +120,7 @@ export default function AdminLoginPage() {
 
         <div className="mt-8 pt-6 border-t border-slate-700/60 text-center">
           <p className="text-xs text-slate-500">
-            Varsayılan Bilgiler: <code className="text-slate-400 font-mono">admin@yazarperde.com</code> / <code className="text-slate-400 font-mono">admin123456</code>
+            Varsayılan Bilgiler: <code className="text-slate-400 font-mono">admin@pliseperdebursa.com.tr</code> / <code className="text-slate-400 font-mono">admin123456</code>
           </p>
         </div>
       </div>

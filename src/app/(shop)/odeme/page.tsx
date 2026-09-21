@@ -506,10 +506,10 @@ export default function CheckoutPage() {
               {/* Kredi Kartı / PayTR */}
               {paytrActive && (
                 <label
-                  className={`flex items-center justify-between p-3.5 rounded-sm border cursor-pointer transition ${
+                  className={`flex items-center justify-between p-3.5 rounded-xl border cursor-pointer transition ${
                     paymentMethod === 'CREDIT_CARD'
-                      ? 'border-slate-900 bg-slate-50 ring-1 ring-slate-900'
-                      : 'border-slate-200 hover:bg-slate-50'
+                      ? 'border-[#C5A059] bg-[#FAF5EB] ring-1 ring-[#C5A059]'
+                      : 'border-[#d7d7db] hover:bg-[#FAF5EB]/40'
                   }`}
                 >
                   <div className="flex items-center gap-3">
@@ -518,14 +518,14 @@ export default function CheckoutPage() {
                       name="payment_method"
                       checked={paymentMethod === 'CREDIT_CARD'}
                       onChange={() => setPaymentMethod('CREDIT_CARD')}
-                      className="text-[#1B84F8]"
+                      className="text-[#C5A059] accent-[#C5A059]"
                     />
                     <div>
-                      <span className="font-bold text-slate-900 block">Kredi Kartı / Banka Kartı (PayTR 3D Secure)</span>
-                      <span className="text-[10px] text-slate-500">Tüm bankaların kartlarıyla 12 aya varan taksit imkanı • 256-Bit SSL</span>
+                      <span className="font-bold text-[#151523] block">Kredi Kartı / Banka Kartı (PayTR 3D Secure)</span>
+                      <span className="text-[10px] text-[#49495a]">Tüm bankaların kartlarıyla 12 aya varan taksit imkanı • 256-Bit SSL</span>
                     </div>
                   </div>
-                  <Lock className="w-4 h-4 text-slate-400" />
+                  <Lock className="w-4 h-4 text-[#868694]" />
                 </label>
               )}
 
@@ -743,7 +743,7 @@ export default function CheckoutPage() {
                   type="checkbox"
                   checked={agreeTerms}
                   onChange={(e) => setAgreeTerms(e.target.checked)}
-                  className="w-3.5 h-3.5 rounded-sm border-slate-300 text-[#1B84F8] mt-0.5"
+                  className="w-4 h-4 rounded border-[#d7d7db] text-[#C5A059] accent-[#C5A059] mt-0.5"
                 />
                 <span>
                   <Link href="/sayfalar/mesafeli-satis-sozlesmesi" target="_blank" className="text-slate-900 underline font-bold">
@@ -759,7 +759,7 @@ export default function CheckoutPage() {
               type="button"
               disabled={isSubmitting}
               onClick={handleSubmitOrder}
-              className="w-full bg-[#1B84F8] hover:bg-[#156cd1] disabled:opacity-50 text-white py-3.5 px-4 rounded-sm text-xs font-extrabold flex items-center justify-center gap-1.5 uppercase tracking-wide transition cursor-pointer shadow-xs"
+              className="w-full bg-[#C5A059] hover:bg-[#B88E28] disabled:opacity-50 text-white py-4 px-4 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 uppercase tracking-wide transition cursor-pointer shadow-[0_2px_6px_rgba(0,0,0,0.2)]"
             >
               <Lock className="w-4 h-4" />
               <span>
@@ -767,7 +767,7 @@ export default function CheckoutPage() {
               </span>
             </button>
 
-            <div className="flex items-center justify-center gap-1.5 text-[10px] text-slate-400">
+            <div className="flex items-center justify-center gap-1.5 text-[10px] text-[#868694]">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
               <span>256-Bit SSL Güvenli Alışveriş Güvencesi</span>
             </div>

@@ -187,13 +187,13 @@ function TopluYazdirContent() {
                 <div className="col-span-6 flex flex-col justify-between pr-1 border-r border-slate-300">
                   <div>
                     <h2 className="text-sm font-black tracking-tight text-black uppercase">
-                      YAZAR PERDE SİSTEMLERİ
+                      PLİSE PERDE BURSA
                     </h2>
                     <p className="text-[9px] font-bold text-slate-700 uppercase tracking-wide">
                       Özel Ölçü Atölye İmalat Fişi
                     </p>
                     <p className="text-[8px] text-slate-600 mt-0.5">
-                      Tel: 0541 494 51 73 • yazarperde.com
+                      Tel: 0532 726 34 74 • pliseperdebursa.com.tr
                     </p>
                   </div>
 
@@ -282,7 +282,7 @@ function TopluYazdirContent() {
                   <div className="mt-1.5 pt-1 border-t border-black text-[8px] flex items-center justify-between">
                     <div>
                       <span className="text-[7px] text-slate-500 uppercase block leading-none">Gönderici:</span>
-                      <span className="font-bold text-[8px] text-slate-800 leading-none">Yazar Perde - Bursa</span>
+                      <span className="font-bold text-[8px] text-slate-800 leading-none">Plise Perde Bursa</span>
                     </div>
                     <div className="text-right">
                       {order.paymentMethod === 'CASH_ON_DELIVERY' ? (

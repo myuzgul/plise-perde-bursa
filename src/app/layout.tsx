@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Yazar Perde - Özel Ölçülü Perde Sistemleri",
-  description: "Evinize özel ölçülü tül, stor, zebra, plise ve fon perde sistemleri.",
+  title: "Plise Perde Bursa - Cam Balkon & Özel Ölçü Plise Perde Sistemleri",
+  description: "Bursa özel ölçülü plise perde imalatı. Cam balkon, pencere ve kapılar için vidalı ve yapıştırmalı plise perde modelleri.",
 };
 
 export default function RootLayout({

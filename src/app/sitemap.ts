@@ -1,8 +1,8 @@
-﻿import { MetadataRoute } from 'next';
+import { MetadataRoute } from 'next';
 import prisma from '@/lib/prisma';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXTAUTH_URL || 'https://yazar.mesarajans.com';
+  const baseUrl = process.env.NEXTAUTH_URL || 'https://pliseperdebursa.com.tr';
 
   try {
     const categories = await prisma.category.findMany({

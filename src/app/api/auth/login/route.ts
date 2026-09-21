@@ -51,7 +51,7 @@ export async function POST(req: NextRequest) {
         email: user.email,
         name: user.name,
         surname: user.surname,
-        message: 'Hoş geldiniz! Yazar Perde yeni sistemimize üyeliğiniz güvenle aktarılmıştır. Lütfen hesabınız için yeni bir şifre belirleyiniz.',
+        message: 'Hoş geldiniz! Plise Perde Bursa yeni sistemimize üyeliğiniz güvenle aktarılmıştır. Lütfen hesabınız için yeni bir şifre belirleyiniz.',
       }, { status: 200 });
     }
 

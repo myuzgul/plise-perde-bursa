@@ -197,22 +197,22 @@ export default function CurtainOptionsForm(props: CurtainOptionsFormProps) {
             }
           });
         }}
-        className={`flex items-center gap-1.5 p-1.5 rounded border transition cursor-pointer text-left ${
+        className={`flex items-center gap-1.5 p-1.5 rounded-lg border transition cursor-pointer text-left ${
           selected
-            ? 'border-slate-900 bg-slate-100 ring-1 ring-slate-900'
-            : 'border-slate-200 bg-white hover:border-slate-400'
+            ? 'border-[#C5A059] bg-[#FAF5EB] ring-1 ring-[#C5A059]'
+            : 'border-[#d7d7db] bg-white hover:border-[#C5A059]'
         }`}
         title={`${title} - Görseli İncele`}
       >
-        <div className="w-8 h-8 rounded bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 overflow-hidden relative">
+        <div className="w-8 h-8 rounded-lg bg-[#FAF5EB] border border-[#d7d7db] flex items-center justify-center shrink-0 overflow-hidden relative">
           <RenderSvgIcon type={svgType} />
           <div className="absolute inset-0 bg-black/0 hover:bg-black/10 flex items-center justify-center transition">
-            <ZoomIn className="w-3 h-3 text-slate-700 opacity-60" />
+            <ZoomIn className="w-3 h-3 text-[#151523] opacity-60" />
           </div>
         </div>
         <div className="min-w-0 pr-1">
-          <span className="text-[10px] font-bold text-slate-800 block truncate leading-tight">{title}</span>
-          <span className="text-[9px] text-slate-400 block truncate leading-none mt-0.5">Büyüt / İncele</span>
+          <span className="text-[10px] font-bold text-[#151523] block truncate leading-tight">{title}</span>
+          <span className="text-[9px] text-[#49495a] block truncate leading-none mt-0.5">Büyüt / İncele</span>
         </div>
       </button>
     );
@@ -221,46 +221,46 @@ export default function CurtainOptionsForm(props: CurtainOptionsFormProps) {
   return (
     <div className="space-y-6">
       {curtainType === 'FIXED_PRICE' ? (
-        <div className="border border-emerald-200 bg-emerald-50/60 rounded-sm p-4 space-y-2">
+        <div className="border border-emerald-200 bg-emerald-50/60 rounded-xl p-4 space-y-2">
           <div className="flex items-center gap-2 text-xs font-bold text-emerald-900">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
             <span>Hazır Standart Ölçü & Sabit Fiyatlı Ürün</span>
           </div>
-          <p className="text-xs text-slate-600 leading-relaxed">
+          <p className="text-xs text-[#49495a] leading-relaxed">
             Bu ürün hazır standart ölçüde olup herhangi bir ek ölçü veya mekanizma hesaplaması yapılmadan doğrudan belirtilen fiyat üzerinden sepete eklenir.
           </p>
-          <div className="text-[11px] text-emerald-800 bg-white/80 p-2.5 rounded border border-emerald-200/80 font-medium">
+          <div className="text-[11px] text-emerald-800 bg-white/80 p-2.5 rounded-lg border border-emerald-200/80 font-medium">
             ✓ Paketi açıp hemen kullanmaya hazır, tüm montaj ve bağlantı aparatları kutu içeriğine dahildir.
           </div>
         </div>
       ) : (
         <>
           {/* 1. ÖLÇÜ ALANLARI */}
-          <div className="border-t border-slate-200 pt-5 space-y-3">
+          <div className="border-t border-[#d7d7db] pt-5 space-y-3">
             <div className="flex items-center justify-between">
-              <h3 className="text-xs font-extrabold text-slate-900 uppercase tracking-wider">
+              <h3 className="text-xs font-bold text-[#151523] uppercase tracking-wider">
                 1. ÖLÇÜ SEÇİMİ
               </h3>
               <div className="flex items-center text-[11px] gap-2">
                 <button
                   type="button"
                   onClick={() => setInputMode('SELECT')}
-                  className={`px-2 py-0.5 rounded transition cursor-pointer font-bold ${
+                  className={`px-3 py-1 rounded-full transition cursor-pointer font-bold ${
                     inputMode === 'SELECT'
-                      ? 'bg-slate-900 text-white'
-                      : 'text-slate-500 hover:text-slate-900'
+                      ? 'bg-[#151523] text-white shadow-xs'
+                      : 'text-[#49495a] hover:text-[#151523]'
                   }`}
                 >
                   Açılır Liste
                 </button>
-            <span className="text-slate-300">|</span>
+            <span className="text-[#d7d7db]">|</span>
             <button
               type="button"
               onClick={() => setInputMode('CUSTOM')}
-              className={`px-2 py-0.5 rounded transition cursor-pointer font-bold ${
+              className={`px-3 py-1 rounded-full transition cursor-pointer font-bold ${
                 inputMode === 'CUSTOM'
-                  ? 'bg-slate-900 text-white'
-                  : 'text-slate-500 hover:text-slate-900'
+                  ? 'bg-[#151523] text-white shadow-xs'
+                  : 'text-[#49495a] hover:text-[#151523]'
               }`}
             >
               Manuel Elle Yaz
@@ -491,13 +491,13 @@ export default function CurtainOptionsForm(props: CurtainOptionsFormProps) {
               />
             </div>
 
-            <div className="border border-slate-200 p-2.5 rounded-sm bg-slate-50 flex items-center justify-between">
-              <label className="flex items-center gap-2 text-xs font-semibold text-slate-800 cursor-pointer">
+            <div className="border border-[#d7d7db] p-3 rounded-lg bg-white flex items-center justify-between">
+              <label className="flex items-center gap-2 text-xs font-semibold text-[#151523] cursor-pointer">
                 <input
                   type="checkbox"
                   checked={withRenso}
                   onChange={(e) => setWithRenso(e.target.checked)}
-                  className="w-3.5 h-3.5 rounded-sm border-slate-300 text-[#1B84F8]"
+                  className="w-4 h-4 rounded border-[#d7d7db] text-[#C5A059] accent-[#C5A059]"
                 />
                 <span>Renso (Fon Kol Bağı Demiri) İstiyorum (+{fonWingType === 'DOUBLE_WING' ? `${renso_price * 2} TL / 2 Adet` : `${renso_price} TL / 1 Adet`})</span>
               </label>
@@ -513,7 +513,7 @@ export default function CurtainOptionsForm(props: CurtainOptionsFormProps) {
                     setModalData(null);
                   }
                 })}
-                className="text-[10px] text-[#1B84F8] font-bold underline cursor-pointer"
+                className="text-[10px] text-[#C5A059] font-bold underline cursor-pointer hover:text-[#B88E28]"
               >
                 Görseli Gör
               </button>
@@ -663,19 +663,19 @@ export default function CurtainOptionsForm(props: CurtainOptionsFormProps) {
                     setSkirtCut(e.target.checked);
                     if (!e.target.checked) setWithBeads(false);
                   }}
-                  className="w-3.5 h-3.5 rounded-sm border-slate-300 text-[#1B84F8]"
+                  className="w-4 h-4 rounded border-[#d7d7db] text-[#C5A059] accent-[#C5A059]"
                 />
                 <span>Dilimli Etek Kesimi İstiyorum (+{skirt_cut_price} TL/m²)</span>
               </label>
 
               {skirtCut && (
                 <div className="space-y-2 pl-5 pt-1">
-                  <label className="flex items-center gap-2 text-xs font-semibold text-slate-800 cursor-pointer">
+                  <label className="flex items-center gap-2 text-xs font-semibold text-[#151523] cursor-pointer">
                     <input
                       type="checkbox"
                       checked={withBeads}
                       onChange={(e) => setWithBeads(e.target.checked)}
-                      className="w-3.5 h-3.5 rounded-sm border-slate-300 text-[#1B84F8]"
+                      className="w-4 h-4 rounded border-[#d7d7db] text-[#C5A059] accent-[#C5A059]"
                     />
                     <span>Perdeye Uygun Kristal Boncuk İstiyorum (+{bead_price} TL/m²)</span>
                   </label>
@@ -683,16 +683,22 @@ export default function CurtainOptionsForm(props: CurtainOptionsFormProps) {
                   <div className="grid grid-cols-2 gap-2 pt-1">
                     <OptionThumb
                       title="Dilimli Etek"
-                      desc="Stor ve zebra perdenin alt ucuna dalgalı lazer kesim dilim modeli uygulanır."
+                      desc="Stor veya zebra perdenin alt etek çıtasına dekoratif oymalı dalga kesimi uygulanır."
                       selected={skirtCut && !withBeads}
-                      onSelect={() => { setSkirtCut(true); setWithBeads(false); }}
+                      onSelect={() => {
+                        setSkirtCut(true);
+                        setWithBeads(false);
+                      }}
                       svgType="skirt-plain"
                     />
                     <OptionThumb
-                      title="Boncuklu Etek"
-                      desc="Dilimli eteğin uç kısımlarına şık kristal boncuk saçakları dikilir."
+                      title="Dilimli + Boncuklu"
+                      desc="Oymalı dalga kesimli etek ucuna ışıltılı kristal boncuk saçakları dikilir."
                       selected={skirtCut && withBeads}
-                      onSelect={() => { setSkirtCut(true); setWithBeads(true); }}
+                      onSelect={() => {
+                        setSkirtCut(true);
+                        setWithBeads(true);
+                      }}
                       svgType="skirt-beads"
                     />
                   </div>
@@ -707,31 +713,31 @@ export default function CurtainOptionsForm(props: CurtainOptionsFormProps) {
           <div className="space-y-4">
             {/* 1. Ölçü Alma Şekli Seçimi */}
             <div className="space-y-2">
-              <label className="block text-xs font-semibold text-slate-700">
+              <label className="block text-xs font-semibold text-[#151523]">
                 Ölçüyü Nasıl Aldınız?
               </label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <button
                   type="button"
                   onClick={() => setPlisseMeasurementType && setPlisseMeasurementType('PROFILE_INCLUDED')}
-                  className={`p-3 rounded-sm border text-left transition cursor-pointer flex items-start gap-3 ${
+                  className={`p-3 rounded-xl border text-left transition cursor-pointer flex items-start gap-3 ${
                     (plisseMeasurementType || 'PROFILE_INCLUDED') === 'PROFILE_INCLUDED'
-                      ? 'border-[#1B84F8] bg-blue-50/50 ring-1 ring-[#1B84F8]'
-                      : 'border-slate-200 bg-white hover:border-slate-300'
+                      ? 'border-[#C5A059] bg-[#FAF5EB] ring-1 ring-[#C5A059]'
+                      : 'border-[#d7d7db] bg-white hover:border-[#C5A059]'
                   }`}
                 >
                   <div className={`w-4 h-4 rounded-full border mt-0.5 flex items-center justify-center shrink-0 ${
                     (plisseMeasurementType || 'PROFILE_INCLUDED') === 'PROFILE_INCLUDED'
-                      ? 'border-[#1B84F8] bg-[#1B84F8]'
-                      : 'border-slate-300 bg-white'
+                      ? 'border-[#C5A059] bg-[#C5A059]'
+                      : 'border-[#d7d7db] bg-white'
                   }`}>
                     {(plisseMeasurementType || 'PROFILE_INCLUDED') === 'PROFILE_INCLUDED' && (
                       <div className="w-1.5 h-1.5 rounded-full bg-white" />
                     )}
                   </div>
                   <div>
-                    <span className="font-bold text-xs text-slate-900 block">Profil Dahil Ölçü Aldım</span>
-                    <span className="text-[11px] text-slate-500 block mt-0.5">
+                    <span className="font-bold text-xs text-[#151523] block">Profil Dahil Ölçü Aldım</span>
+                    <span className="text-[11px] text-[#49495a] block mt-0.5">
                       Cam kanadının etrafındaki alüminyum/PVC profil dahil dıştan dışa net ölçü girdim.
                     </span>
                   </div>
@@ -740,24 +746,24 @@ export default function CurtainOptionsForm(props: CurtainOptionsFormProps) {
                 <button
                   type="button"
                   onClick={() => setPlisseMeasurementType && setPlisseMeasurementType('INNER_GLASS')}
-                  className={`p-3 rounded-sm border text-left transition cursor-pointer flex items-start gap-3 ${
+                  className={`p-3 rounded-xl border text-left transition cursor-pointer flex items-start gap-3 ${
                     plisseMeasurementType === 'INNER_GLASS'
-                      ? 'border-[#1B84F8] bg-blue-50/50 ring-1 ring-[#1B84F8]'
-                      : 'border-slate-200 bg-white hover:border-slate-300'
+                      ? 'border-[#C5A059] bg-[#FAF5EB] ring-1 ring-[#C5A059]'
+                      : 'border-[#d7d7db] bg-white hover:border-[#C5A059]'
                   }`}
                 >
                   <div className={`w-4 h-4 rounded-full border mt-0.5 flex items-center justify-center shrink-0 ${
                     plisseMeasurementType === 'INNER_GLASS'
-                      ? 'border-[#1B84F8] bg-[#1B84F8]'
-                      : 'border-slate-300 bg-white'
+                      ? 'border-[#C5A059] bg-[#C5A059]'
+                      : 'border-[#d7d7db] bg-white'
                   }`}>
                     {plisseMeasurementType === 'INNER_GLASS' && (
                       <div className="w-1.5 h-1.5 rounded-full bg-white" />
                     )}
                   </div>
                   <div>
-                    <span className="font-bold text-xs text-slate-900 block">İç Cam Ölçüsü Aldım</span>
-                    <span className="text-[11px] text-slate-500 block mt-0.5">
+                    <span className="font-bold text-xs text-[#151523] block">İç Cam Ölçüsü Aldım</span>
+                    <span className="text-[11px] text-[#49495a] block mt-0.5">
                       Sadece cam fitilleri arasındaki net iç cam alanının ölçüsünü girdim.
                     </span>
                   </div>
@@ -768,89 +774,83 @@ export default function CurtainOptionsForm(props: CurtainOptionsFormProps) {
             {/* 2. Kasa / Profil Rengi Seçimi */}
             <div className="space-y-2">
               <div className="flex items-center justify-between">
-                <label className="block text-xs font-semibold text-slate-700">
-                  Kasa / Alüminyum Profil Rengi
-                </label>
-                <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                <div className="flex items-center gap-2">
+                  <label className="block text-xs font-bold text-[#151523]">
+                    Kasa / Profil Rengi:
+                  </label>
+                  <span className="text-[11px] font-black text-[#C5A059] bg-[#FAF5EB] px-2.5 py-0.5 rounded-full border border-[#DFCE9E]">
+                    {PROFILE_COLORS.find((c) => c.id === (plisseProfileColor || 'WHITE'))?.name} Kasa
+                  </span>
+                </div>
+                <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
                   Ücretsiz Renk Seçimi
                 </span>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2">
-                {[
-                  {
-                    id: 'WHITE' as const,
-                    name: 'Beyaz',
-                    swatch: '#FFFFFF',
-                    textColor: '#FFFFFF',
-                    border: 'border-slate-300',
-                  },
-                  {
-                    id: 'CREAM' as const,
-                    name: 'Krem',
-                    swatch: '#FDF5E6',
-                    textColor: '#FDE047',
-                    border: 'border-amber-300',
-                  },
-                  {
-                    id: 'GRAY' as const,
-                    name: 'Gri',
-                    swatch: '#9CA3AF',
-                    textColor: '#CBD5E1',
-                    border: 'border-slate-400',
-                  },
-                  {
-                    id: 'ANTHRACITE' as const,
-                    name: 'Antrasit',
-                    swatch: '#1F2937',
-                    textColor: '#94A3B8',
-                    border: 'border-slate-700',
-                  },
-                  {
-                    id: 'BROWN' as const,
-                    name: 'Kahve',
-                    swatch: '#6B3E11',
-                    textColor: '#FDBA74',
-                    border: 'border-amber-800',
-                  },
-                  {
-                    id: 'BRONZE' as const,
-                    name: 'Bronz',
-                    swatch: '#A05A2C',
-                    textColor: '#FBBF24',
-                    border: 'border-amber-600',
-                  },
-                ].map((color) => {
+              {/* Kompakt & Profesyonel Fotoğraflı Kasa Kartları */}
+              <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+                {PROFILE_COLORS.map((color) => {
                   const isSelected = (plisseProfileColor || 'WHITE') === color.id;
                   return (
-                    <button
+                    <div
                       key={color.id}
-                      type="button"
                       onClick={() => setPlisseProfileColor && setPlisseProfileColor(color.id)}
-                      className={`relative flex items-center justify-center gap-2 p-2.5 rounded-xl transition-all cursor-pointer bg-slate-900 border ${
+                      className={`group relative flex flex-col p-1.5 rounded-xl transition-all cursor-pointer border select-none ${
                         isSelected
-                          ? 'border-[#1B84F8] ring-2 ring-[#1B84F8]/50 shadow-md scale-[1.02]'
-                          : 'border-slate-800 hover:border-slate-700 hover:bg-slate-850 opacity-90 hover:opacity-100'
+                          ? 'border-[#C5A059] bg-[#FAF5EB] ring-2 ring-[#C5A059]/40 shadow-xs'
+                          : 'border-[#d7d7db] bg-white hover:border-[#C5A059] hover:bg-[#FAF5EB]/40'
                       }`}
                     >
-                      {/* Renk Yuvarlağı */}
-                      <span
-                        className={`w-3.5 h-3.5 rounded-full shrink-0 shadow-xs border ${color.border}`}
-                        style={{ backgroundColor: color.swatch }}
-                      />
-                      {/* Seçilen Renge Özel Yazı Rengi */}
-                      <span
-                        className="text-xs font-black tracking-wide"
-                        style={{ color: color.textColor }}
-                      >
-                        {color.name}
-                      </span>
-                      {isSelected && (
-                        <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-[#1B84F8] text-white flex items-center justify-center text-[9px] shadow-xs">
-                          ✓
+                      {/* Gerçek Alüminyum Kasa Fotoğrafı */}
+                      <div className="relative w-full h-11 sm:h-12 rounded-lg overflow-hidden bg-[#F6F4F0] border border-[#d7d7db]/60 flex items-center justify-center">
+                        <img
+                          src={color.image}
+                          alt={color.name}
+                          className="w-full h-full object-cover object-right group-hover:scale-105 transition-transform duration-200"
+                        />
+                        {isSelected && (
+                          <span className="absolute top-1 right-1 w-4 h-4 rounded-full bg-[#C5A059] text-white flex items-center justify-center text-[9px] font-black shadow-xs">
+                            ✓
+                          </span>
+                        )}
+                        {/* Detaylı İnceleme Butonu */}
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setModalData({
+                              title: `${color.name} Alüminyum Kasa`,
+                              description: `${color.name} elektrostatik fırın boyalı alüminyum profil ve montaj parçaları. Paslanmaz, solmaz ve 1. sınıf dayanıklılığa sahiptir.`,
+                              svgType: color.svgType,
+                              onSelect: () => {
+                                if (setPlisseProfileColor) setPlisseProfileColor(color.id);
+                                setModalData(null);
+                              },
+                              isSelected,
+                            });
+                          }}
+                          className="absolute bottom-1 right-1 w-4 h-4 rounded bg-black/60 hover:bg-black/90 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
+                          title="Büyük Gör"
+                        >
+                          <ZoomIn className="w-2.5 h-2.5" />
+                        </button>
+                      </div>
+
+                      {/* Renk Başlığı ve Renk Noktası */}
+                      <div className="mt-1.5 px-0.5 flex items-center justify-between">
+                        <span
+                          className={`text-[11px] font-bold truncate ${
+                            isSelected ? 'text-[#151523]' : 'text-[#49495a]'
+                          }`}
+                        >
+                          {color.name}
                         </span>
-                      )}
-                    </button>
+                        <span
+                          className="w-2.5 h-2.5 rounded-full shrink-0 border border-black/15 shadow-2xs"
+                          style={{ backgroundColor: color.swatch }}
+                        />
+                      </div>
+                    </div>
                   );
                 })}
               </div>
@@ -936,15 +936,18 @@ export default function CurtainOptionsForm(props: CurtainOptionsFormProps) {
                 <button
                   type="button"
                   onClick={() => setModalData(null)}
-                  className="flex-1 py-2.5 px-4 border border-slate-300 bg-white hover:bg-slate-100 rounded-sm text-xs font-bold text-slate-700 transition cursor-pointer"
+                  className="flex-1 py-3 px-4 border border-[#d7d7db] bg-white hover:bg-[#FAF5EB] rounded-xl text-xs font-bold text-[#151523] transition cursor-pointer"
                 >
                   Kapat (X)
                 </button>
                 {modalData.onSelect && (
                   <button
                     type="button"
-                    onClick={modalData.onSelect}
-                    className="flex-1 py-2.5 px-4 bg-[#1B84F8] hover:bg-[#156cd1] text-white rounded-sm text-xs font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+                    onClick={() => {
+                      if (modalData.onSelect) modalData.onSelect();
+                      setModalData(null);
+                    }}
+                    className="flex-1 py-3 px-4 bg-[#C5A059] hover:bg-[#B88E28] text-white rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-[0_2px_6px_rgba(0,0,0,0.2)]"
                   >
                     <Check className="w-4 h-4" />
                     <span>Bu Seçeneği Seç</span>
@@ -958,6 +961,57 @@ export default function CurtainOptionsForm(props: CurtainOptionsFormProps) {
     </div>
   );
 }
+
+const PROFILE_COLORS = [
+  {
+    id: 'WHITE' as const,
+    name: 'Beyaz',
+    image: '/images/profiles/beyazkasa.jpg',
+    svgType: 'profile-white',
+    swatch: '#FFFFFF',
+    border: 'border-slate-300',
+  },
+  {
+    id: 'CREAM' as const,
+    name: 'Krem',
+    image: '/images/profiles/kremkasa.jpg',
+    svgType: 'profile-cream',
+    swatch: '#FDF5E6',
+    border: 'border-amber-200',
+  },
+  {
+    id: 'GRAY' as const,
+    name: 'Gri',
+    image: '/images/profiles/grikasa.jpg',
+    svgType: 'profile-gray',
+    swatch: '#9CA3AF',
+    border: 'border-slate-400',
+  },
+  {
+    id: 'ANTHRACITE' as const,
+    name: 'Antrasit',
+    image: '/images/profiles/antrasitkasa.jpg',
+    svgType: 'profile-anthracite',
+    swatch: '#24272C',
+    border: 'border-slate-700',
+  },
+  {
+    id: 'BROWN' as const,
+    name: 'Kahve',
+    image: '/images/profiles/kahvekasa.jpg',
+    svgType: 'profile-brown',
+    swatch: '#533826',
+    border: 'border-amber-900',
+  },
+  {
+    id: 'BRONZE' as const,
+    name: 'Bronz',
+    image: '/images/profiles/bronzkasa.jpg',
+    svgType: 'profile-bronze',
+    swatch: '#5E4A3E',
+    border: 'border-amber-700',
+  },
+];
 
 const OPTION_IMAGE_MAP: Record<string, string> = {
   'chain-metal': '/images/options/zincir-metal.jpg',
@@ -980,6 +1034,12 @@ const OPTION_IMAGE_MAP: Record<string, string> = {
   'fon-cornice': '/images/options/fon-kornis.jpg',
   'fon-rustic-ring': '/images/options/fon-rustik-halka.jpg',
   'fon-rustic-pocket': '/images/options/fon-rustik-boru.jpg',
+  'profile-white': '/images/profiles/beyazkasa.jpg',
+  'profile-cream': '/images/profiles/kremkasa.jpg',
+  'profile-gray': '/images/profiles/grikasa.jpg',
+  'profile-anthracite': '/images/profiles/antrasitkasa.jpg',
+  'profile-brown': '/images/profiles/kahvekasa.jpg',
+  'profile-bronze': '/images/profiles/bronzkasa.jpg',
 };
 
 function RenderSvgIcon({ type, large }: { type: string; large?: boolean }) {
@@ -1074,7 +1134,7 @@ function RenderSvgIcon({ type, large }: { type: string; large?: boolean }) {
       <svg className={`${sz} text-slate-700`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M4 2v18h16" stroke="#334155" strokeWidth="3" strokeLinecap="round" />
         <path d="M4 10l8 10" stroke="#94a3b8" strokeWidth="1.5" />
-        <circle cx="16" cy="20" r="2" fill="#1B84F8" />
+        <circle cx="16" cy="20" r="2" fill="#C5A059" />
       </svg>
     );
   }
@@ -1116,7 +1176,7 @@ function RenderSvgIcon({ type, large }: { type: string; large?: boolean }) {
     return (
       <svg className={`${sz} text-slate-700`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M5 3v6a3 3 0 0 0 6 0V6a2 2 0 0 1 4 0v12" stroke="#334155" strokeWidth="2.5" fill="none" />
-        <circle cx="15" cy="18" r="2" fill="#1B84F8" />
+        <circle cx="15" cy="18" r="2" fill="#C5A059" />
       </svg>
     );
   }
@@ -1125,7 +1185,7 @@ function RenderSvgIcon({ type, large }: { type: string; large?: boolean }) {
     return (
       <svg className={`${sz} text-slate-700`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M4 12h8a4 4 0 0 1 4 4v4" stroke="#334155" strokeWidth="2.5" />
-        <circle cx="4" cy="12" r="2" fill="#1B84F8" />
+        <circle cx="4" cy="12" r="2" fill="#C5A059" />
       </svg>
     );
   }

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { Maximize2, X } from 'lucide-react';
@@ -24,8 +24,8 @@ export default function ProductGallery({ productName, images, tag }: ProductGall
 
   return (
     <div className="space-y-3">
-      {/* Büyük Görsel */}
-      <div className="relative aspect-4/5 w-full rounded-sm overflow-hidden bg-slate-100 border border-slate-200 group">
+      {/* Büyük Görsel (20px border radius per designer.md) */}
+      <div className="relative aspect-4/5 w-full rounded-[20px] overflow-hidden bg-[#e9e9ec] border border-[#d7d7db] group shadow-xs">
         <img
           src={currentImg}
           alt={productName}
@@ -35,14 +35,14 @@ export default function ProductGallery({ productName, images, tag }: ProductGall
         {tag && (
           <span
             style={{ backgroundColor: tag.badgeColor }}
-            className="absolute top-3 left-3 text-[10px] font-bold text-white px-2 py-0.5 rounded-sm uppercase tracking-wider shadow-xs"
+            className="absolute top-3.5 left-3.5 text-[10px] font-bold text-white px-3 py-1 rounded-full uppercase tracking-wider shadow-xs"
           >
             {tag.name}
           </span>
         )}
         <button
           onClick={() => setIsLightboxOpen(true)}
-          className="absolute bottom-3 right-3 bg-slate-900/70 hover:bg-slate-900 text-white p-2 rounded-sm transition cursor-pointer"
+          className="absolute bottom-3.5 right-3.5 bg-[#151523]/80 hover:bg-[#151523] text-white p-2.5 rounded-xl transition cursor-pointer backdrop-blur-xs"
           title="Büyük Gör"
         >
           <Maximize2 className="w-4 h-4" />
@@ -56,10 +56,10 @@ export default function ProductGallery({ productName, images, tag }: ProductGall
             <button
               key={img.id || idx}
               onClick={() => setActiveIndex(idx)}
-              className={`w-16 h-16 rounded-sm overflow-hidden border transition shrink-0 cursor-pointer ${
+              className={`w-16 h-16 rounded-xl overflow-hidden border transition shrink-0 cursor-pointer ${
                 activeIndex === idx
-                  ? 'border-slate-900 ring-1 ring-slate-900'
-                  : 'border-slate-200 opacity-60 hover:opacity-100'
+                  ? 'border-[#C5A059] ring-2 ring-[#C5A059]/50 scale-[1.02]'
+                  : 'border-[#d7d7db] opacity-70 hover:opacity-100 hover:border-[#C5A059]'
               }`}
             >
               <img src={img.imageUrl} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover" />

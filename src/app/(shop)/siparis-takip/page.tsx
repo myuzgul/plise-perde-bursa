@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
@@ -87,13 +87,13 @@ function OrderTrackingContent() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
       <div className="text-center mb-8">
-        <div className="w-16 h-16 rounded-full bg-blue-50 text-[#1B84F8] flex items-center justify-center mx-auto mb-4">
+        <div className="w-16 h-16 rounded-full bg-[#FAF5EB] text-[#C5A059] flex items-center justify-center mx-auto mb-4">
           <Package className="w-8 h-8" />
         </div>
-        <h1 className="text-2xl sm:text-3xl font-black text-slate-900">
+        <h1 className="text-2xl sm:text-3xl font-bold text-[#151523]">
           Sipariş Durumu Sorgulama
         </h1>
-        <p className="text-xs text-slate-500 mt-1">
+        <p className="text-xs text-[#49495a] mt-1">
           Özel ölçülü perde siparişinizin dikim, üretim ve kargo aşamalarını anlık takip edin.
         </p>
       </div>
@@ -101,25 +101,25 @@ function OrderTrackingContent() {
       {/* Sorgulama Formu */}
       <form
         onSubmit={handleSearch}
-        className="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-xs mb-8 space-y-4"
+        className="bg-white p-6 rounded-xl border border-[#d7d7db] shadow-xs mb-8 space-y-4"
       >
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-[11px] font-bold text-slate-700 mb-1">
+            <label className="block text-[11px] font-bold text-[#151523] mb-1">
               Sipariş Numarası *
             </label>
             <input
               type="text"
-              placeholder="Örn: YP-260826-1234"
+              placeholder="Örn: PPB-260920-1234"
               value={orderNumber}
               onChange={(e) => setOrderNumber(e.target.value)}
-              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs font-bold uppercase focus:outline-none focus:border-[#1B84F8]"
+              className="w-full bg-white border border-[#d7d7db] rounded-lg px-3.5 py-2.5 text-xs font-bold uppercase focus:outline-none focus:border-[#C5A059]"
               required
             />
           </div>
 
           <div>
-            <label className="block text-[11px] font-bold text-slate-700 mb-1">
+            <label className="block text-[11px] font-bold text-[#151523] mb-1">
               Telefon veya E-Posta *
             </label>
             <input
@@ -127,14 +127,14 @@ function OrderTrackingContent() {
               placeholder="Sipariş verirken girdiğiniz telefon veya e-posta"
               value={phoneOrEmail}
               onChange={(e) => setPhoneOrEmail(e.target.value)}
-              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:border-[#1B84F8]"
+              className="w-full bg-white border border-[#d7d7db] rounded-lg px-3.5 py-2.5 text-xs text-[#151523] focus:outline-none focus:border-[#C5A059]"
               required
             />
           </div>
         </div>
 
         {error && (
-          <div className="flex items-center gap-2 text-xs font-bold text-red-600 bg-red-50 p-3 rounded-xl border border-red-200">
+          <div className="flex items-center gap-2 text-xs font-bold text-red-600 bg-red-50 p-3 rounded-lg border border-red-200">
             <AlertCircle className="w-4 h-4 shrink-0" />
             <span>{error}</span>
           </div>
@@ -143,7 +143,7 @@ function OrderTrackingContent() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-[#1B84F8] hover:bg-[#156cd1] text-white py-3.5 rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-md shadow-[#1B84F8]/25 transition cursor-pointer"
+          className="w-full bg-[#C5A059] hover:bg-[#B88E28] text-white py-3.5 rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-[0_2px_6px_rgba(0,0,0,0.2)] transition cursor-pointer"
         >
           <Search className="w-4 h-4" />
           <span>{loading ? 'Sorgulanıyor...' : 'Siparişimi Sorgula'}</span>
@@ -171,14 +171,14 @@ function OrderTrackingContent() {
               </span>
             </div>
             <div>
-              <span className="text-[10px] text-slate-400 font-semibold block">Toplam Tutar</span>
-              <span className="text-lg font-black text-[#1B84F8]">₺{order.grandTotal.toFixed(2)}</span>
+              <span className="text-[10px] text-[#49495a] font-semibold block">Toplam Tutar</span>
+              <span className="text-lg font-bold text-[#C5A059]">₺{order.grandTotal.toFixed(2)}</span>
             </div>
           </div>
 
           {/* 5 Aşamalı Canlı Timeline Barı */}
-          <div className="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200/80 shadow-xs">
-            <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-6">
+          <div className="bg-white p-6 sm:p-8 rounded-xl border border-[#d7d7db] shadow-xs">
+            <h3 className="text-xs font-bold text-[#151523] uppercase tracking-wider mb-6">
               Sipariş İlerleme Durumu
             </h3>
 
@@ -190,22 +190,22 @@ function OrderTrackingContent() {
                 return (
                   <div key={idx} className="flex md:flex-col items-center md:items-center gap-3 text-left md:text-center flex-1 relative">
                     <div
-                      className={`w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 font-black text-xs transition ${
+                      className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 font-bold text-xs transition ${
                         state === 'COMPLETED'
                           ? 'bg-emerald-500 text-white shadow-md shadow-emerald-500/20'
                           : state === 'CURRENT'
-                          ? 'bg-[#1B84F8] text-white shadow-md shadow-[#1B84F8]/30 ring-4 ring-[#1B84F8]/20 animate-pulse'
-                          : 'bg-slate-100 text-slate-400'
+                          ? 'bg-[#C5A059] text-white shadow-md shadow-[#C5A059]/30 ring-4 ring-[#C5A059]/20 animate-pulse'
+                          : 'bg-[#e9e9ec] text-[#49495a]'
                       }`}
                     >
                       {state === 'COMPLETED' ? <CheckCircle2 className="w-5 h-5" /> : stepNum}
                     </div>
 
                     <div>
-                      <h4 className={`text-xs font-bold ${state === 'CURRENT' ? 'text-[#1B84F8]' : 'text-slate-900'}`}>
+                      <h4 className={`text-xs font-bold ${state === 'CURRENT' ? 'text-[#C5A059]' : 'text-[#151523]'}`}>
                         {step.title}
                       </h4>
-                      <p className="text-[10px] text-slate-500 mt-0.5 max-w-[140px] md:mx-auto">
+                      <p className="text-[10px] text-[#49495a] mt-0.5 max-w-[140px] md:mx-auto">
                         {step.desc}
                       </p>
                     </div>
@@ -216,9 +216,9 @@ function OrderTrackingContent() {
           </div>
 
           {/* Siparişteki Perdeler */}
-          <div className="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-xs space-y-4">
-            <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider border-b border-slate-100 pb-3 flex items-center gap-2">
-              <FileText className="w-4 h-4 text-[#1B84F8]" />
+          <div className="bg-white p-6 rounded-xl border border-[#d7d7db] shadow-xs space-y-4">
+            <h3 className="text-xs font-bold text-[#151523] uppercase tracking-wider border-b border-[#e9e9ec] pb-3 flex items-center gap-2">
+              <FileText className="w-4 h-4 text-[#C5A059]" />
               <span>Siparişteki Özel Ölçülü Perdeler ({order.items?.length})</span>
             </h3>
 

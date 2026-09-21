@@ -45,7 +45,13 @@ export default function HomepageShowcase({ products }: HomepageShowcaseProps) {
     }
   });
 
-  const categories = Array.from(categoryMap.values());
+  // Plise kategorisini bul ve listeyi plise ilk sırada olacak şekilde sırala
+  const rawCategories = Array.from(categoryMap.values());
+  const categories = [...rawCategories].sort((a, b) => {
+    if (a.name.toLowerCase().includes('plise')) return -1;
+    if (b.name.toLowerCase().includes('plise')) return 1;
+    return 0;
+  });
 
   const filteredProducts = products.filter((p) => {
     if (activeCategory === 'ALL') return true;
@@ -62,37 +68,37 @@ export default function HomepageShowcase({ products }: HomepageShowcaseProps) {
   return (
     <section className="max-w-7xl mx-auto px-4 py-8">
       {/* 1. Başlık Alanı */}
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between mb-5">
         <div className="flex items-center gap-3">
-          <h2 className="text-xl sm:text-2xl font-black text-slate-950 tracking-tight">
-            Öne Çıkan Perde Modelleri
+          <h2 className="text-xl sm:text-2xl font-bold text-[#151523] tracking-tight">
+            Öne Çıkan Plise & Perde Modelleri
           </h2>
-          <span className="hidden sm:inline-flex px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 text-xs font-bold border border-slate-200">
+          <span className="hidden sm:inline-flex px-3 py-1 rounded-full bg-[#FAF5EB] text-[#C5A059] text-xs font-bold border border-[#d7d7db]">
             {products.length} Model
           </span>
         </div>
 
         <Link
-          href="/kategori/tul-perdeler"
-          className="text-xs font-bold text-[#1B84F8] hover:text-[#156cd1] flex items-center gap-1 transition"
+          href="/kategori/plise-perdeler"
+          className="text-xs font-bold text-[#C5A059] hover:text-[#B88E28] flex items-center gap-1 transition group"
         >
-          <span>Tüm Modeller</span>
-          <ChevronRight className="w-4 h-4" />
+          <span>Tüm Plise Modelleri</span>
+          <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
         </Link>
       </div>
 
-      {/* 2. MOBİL: Şık ve Pratik Açılır Kategori Seçici (Taşma / Kesilme Olmaz) */}
+      {/* 2. MOBİL: Şık ve Pratik Açılır Kategori Seçici */}
       <div className="block sm:hidden mb-6">
         <div className="relative">
-          <div className="flex items-center justify-between bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 shadow-xs">
+          <div className="flex items-center justify-between bg-white border border-[#d7d7db] rounded-xl px-4 py-3 shadow-xs">
             <div className="flex items-center gap-2 min-w-0">
-              <Filter className="w-4 h-4 text-[#1B84F8] shrink-0" />
-              <span className="text-xs font-medium text-slate-500 shrink-0">Kategori:</span>
-              <span className="text-xs font-extrabold text-slate-900 truncate">
+              <Filter className="w-4 h-4 text-[#C5A059] shrink-0" />
+              <span className="text-xs font-medium text-[#49495a] shrink-0">Kategori:</span>
+              <span className="text-xs font-bold text-[#151523] truncate">
                 {currentCategoryName}
               </span>
             </div>
-            <ChevronDown className="w-4 h-4 text-slate-500 shrink-0 ml-2" />
+            <ChevronDown className="w-4 h-4 text-[#49495a] shrink-0 ml-2" />
           </div>
           <select
             value={activeCategory}
@@ -109,15 +115,15 @@ export default function HomepageShowcase({ products }: HomepageShowcaseProps) {
         </div>
       </div>
 
-      {/* 2. MASAÜSTÜ: Ferah Hap Butonlar */}
+      {/* 2. MASAÜSTÜ: 100px Hap Butonlar (TeePublic Navigation Chips) */}
       <div className="hidden sm:flex flex-wrap items-center gap-2 mb-8">
         <button
           type="button"
           onClick={() => setActiveCategory('ALL')}
-          className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
+          className={`px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
             activeCategory === 'ALL'
-              ? 'bg-slate-900 text-white shadow-sm ring-1 ring-slate-900'
-              : 'bg-white text-slate-600 border border-slate-200 hover:border-slate-300 hover:bg-slate-50'
+              ? 'bg-[#151523] text-white shadow-xs'
+              : 'bg-white text-[#151523] border border-[#d7d7db] hover:border-[#C5A059] hover:text-[#C5A059] hover:bg-[#FAF5EB]'
           }`}
         >
           Tümü ({products.length})
@@ -127,10 +133,10 @@ export default function HomepageShowcase({ products }: HomepageShowcaseProps) {
             key={cat.id}
             type="button"
             onClick={() => setActiveCategory(cat.id)}
-            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
+            className={`px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
               activeCategory === cat.id
-                ? 'bg-slate-900 text-white shadow-sm ring-1 ring-slate-900'
-                : 'bg-white text-slate-600 border border-slate-200 hover:border-slate-300 hover:bg-slate-50'
+                ? 'bg-[#151523] text-white shadow-xs'
+                : 'bg-white text-[#151523] border border-[#d7d7db] hover:border-[#C5A059] hover:text-[#C5A059] hover:bg-[#FAF5EB]'
             }`}
           >
             {cat.name} ({cat.count})

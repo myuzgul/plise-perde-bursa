@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -42,8 +42,8 @@ export default function StoryBar() {
               className="flex flex-col items-center gap-1.5 shrink-0 group cursor-pointer focus:outline-none"
             >
               {/* Hikaye Yuvarlak Çerçeve */}
-              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full p-[2px] border-2 border-slate-300 group-hover:border-[#1B84F8] transition-colors duration-200">
-                <div className="w-full h-full rounded-full overflow-hidden bg-slate-100">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full p-[2px] border-2 border-[#d7d7db] group-hover:border-[#C5A059] transition-colors duration-200">
+                <div className="w-full h-full rounded-full overflow-hidden bg-[#e9e9ec]">
                   <img
                     src={story.imageUrl}
                     alt={story.title}
@@ -52,7 +52,7 @@ export default function StoryBar() {
                 </div>
               </div>
 
-              <span className="text-[11px] font-semibold text-slate-700 group-hover:text-slate-950 transition max-w-[72px] truncate text-center">
+              <span className="text-[11px] font-medium text-[#151523] group-hover:text-[#C5A059] transition max-w-[72px] truncate text-center">
                 {story.title}
               </span>
             </button>
@@ -62,21 +62,21 @@ export default function StoryBar() {
 
       {/* Hikaye Tam Ekran / Pop-up Modalı */}
       {selectedStory && (
-        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="relative w-full max-w-sm bg-white rounded-lg overflow-hidden shadow-2xl flex flex-col">
+        <div className="fixed inset-0 z-50 bg-[#151523]/80 backdrop-blur-xs flex items-center justify-center p-4">
+          <div className="relative w-full max-w-sm bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col border border-[#d7d7db]">
             {/* Üst Bar */}
-            <div className="p-3.5 flex items-center justify-between bg-slate-900 text-white">
+            <div className="p-3.5 flex items-center justify-between bg-[#151523] text-white">
               <span className="text-xs font-bold tracking-wide">{selectedStory.title}</span>
               <button
                 onClick={() => setSelectedStory(null)}
-                className="p-1 text-slate-400 hover:text-white transition cursor-pointer"
+                className="p-1 text-[#b9b9c1] hover:text-white transition cursor-pointer"
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
 
             {/* Hikaye Görseli */}
-            <div className="relative aspect-4/5 bg-slate-100 overflow-hidden flex items-center justify-center">
+            <div className="relative aspect-4/5 bg-[#e9e9ec] overflow-hidden flex items-center justify-center">
               <img
                 src={selectedStory.imageUrl}
                 alt={selectedStory.title}
@@ -85,11 +85,11 @@ export default function StoryBar() {
 
               {/* Alt Buton & Başlık */}
               {selectedStory.targetUrl && (
-                <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/85 via-black/40 to-transparent">
+                <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-[#151523]/90 via-[#151523]/50 to-transparent">
                   <Link
                     href={selectedStory.targetUrl}
                     onClick={() => setSelectedStory(null)}
-                    className="w-full bg-[#1B84F8] hover:bg-[#156cd1] text-white py-2.5 rounded-md text-xs font-bold flex items-center justify-center gap-1.5 transition shadow-sm"
+                    className="w-full bg-[#C5A059] hover:bg-[#B88E28] text-white py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition shadow-[0_2px_6px_rgba(0,0,0,0.2)]"
                   >
                     <span>Kampanyayı / Ürünü İncele</span>
                     <ChevronRight className="w-4 h-4" />

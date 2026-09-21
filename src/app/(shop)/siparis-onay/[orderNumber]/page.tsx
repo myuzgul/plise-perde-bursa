@@ -89,7 +89,7 @@ export default async function OrderConfirmationPage({ params, searchParams }: Or
 
           <div className="bg-white p-5 rounded-2xl border border-blue-100 shadow-xs">
             <pre className="font-mono text-xs text-slate-800 whitespace-pre-wrap leading-relaxed select-all">
-              {settings.bank_transfer_accounts || `Banka: QNB Finansbank\nAlıcı Ünvanı: Yazar Perde Tekstil Gıda İnş.Otomotiv Mobilya Turizm Dış Tic.San.ve Tic.LTD.ŞTİ.\nIBAN: TR00 0000 0000 0000 0000 0000 00\nŞube: Bursa Yıldırım Şubesi`}
+              {settings.bank_transfer_accounts || `Banka: QNB Finansbank\nAlıcı Ünvanı: Plise Perde Bursa\nIBAN: TR00 0000 0000 0000 0000 0000 00\nŞube: Bursa Yıldırım Şubesi`}
             </pre>
           </div>
         </div>

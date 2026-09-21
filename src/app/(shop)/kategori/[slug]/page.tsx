@@ -115,35 +115,35 @@ export default async function CategoryPage(props: CategoryPageProps) {
                   <div key={p.id} className="space-y-1">
                     <Link
                       href={`/kategori/${p.slug}`}
-                      className={`flex items-center justify-between py-1.5 px-2 rounded-sm transition ${
+                      className={`flex items-center justify-between py-2 px-2.5 rounded-lg transition ${
                         isParentActive
-                          ? 'font-bold text-[#1B84F8] bg-blue-50'
-                          : 'text-slate-800 hover:text-slate-950 hover:bg-slate-50 font-semibold'
+                          ? 'font-bold text-[#C5A059] bg-[#FAF5EB]'
+                          : 'text-[#151523] hover:text-[#C5A059] hover:bg-[#FAF5EB]/60 font-semibold'
                       }`}
                     >
                       <span>{p.name}</span>
-                      <span className="text-[10px] text-slate-400 font-mono">
+                      <span className="text-[10px] text-[#868694] font-mono">
                         ({p._count.products + (p.children?.reduce((acc, c) => acc + (c._count?.products || 0), 0) || 0)})
                       </span>
                     </Link>
 
                     {/* Alt Kategoriler (Hiyerarşik Gösterim) */}
                     {p.children && p.children.length > 0 && (
-                      <div className="pl-3 space-y-0.5 border-l-2 border-slate-100 ml-2">
+                      <div className="pl-3 space-y-0.5 border-l-2 border-[#d7d7db] ml-2.5">
                         {p.children.map((c) => {
                           const isCurrent = c.slug === slug;
                           return (
                             <Link
                               key={c.id}
                               href={`/kategori/${c.slug}`}
-                              className={`flex items-center justify-between py-1 px-2 text-[11px] rounded transition ${
+                              className={`flex items-center justify-between py-1.5 px-2 text-[11px] rounded-md transition ${
                                 isCurrent
-                                  ? 'font-bold text-[#1B84F8] bg-blue-50/70'
-                                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                                  ? 'font-bold text-[#C5A059] bg-[#FAF5EB]'
+                                  : 'text-[#49495a] hover:text-[#151523] hover:bg-[#FAF5EB]/60'
                               }`}
                             >
                               <span>{c.name}</span>
-                              <span className="text-[10px] text-slate-400 font-mono">
+                              <span className="text-[10px] text-[#868694] font-mono">
                                 ({c._count.products})
                               </span>
                             </Link>
@@ -157,18 +157,16 @@ export default async function CategoryPage(props: CategoryPageProps) {
             </div>
           </div>
 
-
-
           {/* Markalar */}
           {brands.length > 0 && (
             <div className="pb-5">
-              <h3 className="text-xs font-extrabold text-slate-900 uppercase tracking-wider mb-3">
+              <h3 className="text-xs font-bold text-[#151523] uppercase tracking-wider mb-3">
                 Kumaş Markaları
               </h3>
-              <div className="space-y-2 text-xs text-slate-700">
+              <div className="space-y-2 text-xs text-[#49495a]">
                 {brands.map((b) => (
-                  <label key={b.id} className="flex items-center gap-2 cursor-pointer hover:text-slate-950">
-                    <input type="checkbox" className="w-3.5 h-3.5 rounded-sm border-slate-300 text-[#1B84F8]" />
+                  <label key={b.id} className="flex items-center gap-2 cursor-pointer hover:text-[#151523]">
+                    <input type="checkbox" className="w-4 h-4 rounded border-[#d7d7db] text-[#C5A059] accent-[#C5A059]" />
                     <span>{b.name}</span>
                   </label>
                 ))}
@@ -180,42 +178,42 @@ export default async function CategoryPage(props: CategoryPageProps) {
         {/* Sağ: Başlık, Sıralama & Ürün Grid'i */}
         <section className="flex-1">
           {/* Üst Toolbar */}
-          <div className="border-b border-slate-200 pb-4 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="border-b border-[#d7d7db] pb-4 mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <h1 className="text-xl font-extrabold text-slate-900">{category.name}</h1>
-              <p className="text-xs text-slate-500 mt-0.5">{products.length} ürün listeleniyor</p>
+              <h1 className="text-xl font-bold text-[#151523]">{category.name}</h1>
+              <p className="text-xs text-[#49495a] mt-0.5">{products.length} ürün listeleniyor</p>
             </div>
 
-            {/* Sıralama Seçenekleri */}
+            {/* Sıralama Seçenekleri (8px rounded toggle) */}
             <div className="flex items-center gap-2">
-              <span className="text-xs text-slate-500 font-medium">Sırala:</span>
-              <div className="inline-flex rounded-sm border border-slate-200 text-xs overflow-hidden">
+              <span className="text-xs text-[#49495a] font-medium">Sırala:</span>
+              <div className="inline-flex rounded-lg border border-[#d7d7db] text-xs overflow-hidden bg-white p-0.5 shadow-xs">
                 <Link
                   href={`/kategori/${slug}?sort=price_asc`}
-                  className={`px-3 py-1.5 transition ${
+                  className={`px-3 py-1.5 rounded-md transition ${
                     sort === 'price_asc'
-                      ? 'bg-slate-900 text-white font-bold'
-                      : 'text-slate-700 hover:bg-slate-100'
+                      ? 'bg-[#151523] text-white font-bold'
+                      : 'text-[#49495a] hover:text-[#151523] hover:bg-[#FAF5EB]'
                   }`}
                 >
                   Fiyat Artan
                 </Link>
                 <Link
                   href={`/kategori/${slug}?sort=price_desc`}
-                  className={`px-3 py-1.5 border-l border-slate-200 transition ${
+                  className={`px-3 py-1.5 rounded-md transition ${
                     sort === 'price_desc'
-                      ? 'bg-slate-900 text-white font-bold'
-                      : 'text-slate-700 hover:bg-slate-100'
+                      ? 'bg-[#151523] text-white font-bold'
+                      : 'text-[#49495a] hover:text-[#151523] hover:bg-[#FAF5EB]'
                   }`}
                 >
                   Fiyat Azalan
                 </Link>
                 <Link
                   href={`/kategori/${slug}?sort=name_asc`}
-                  className={`px-3 py-1.5 border-l border-slate-200 transition ${
+                  className={`px-3 py-1.5 rounded-md transition ${
                     sort === 'name_asc'
-                      ? 'bg-slate-900 text-white font-bold'
-                      : 'text-slate-700 hover:bg-slate-100'
+                      ? 'bg-[#151523] text-white font-bold'
+                      : 'text-[#49495a] hover:text-[#151523] hover:bg-[#FAF5EB]'
                   }`}
                 >
                   A-Z

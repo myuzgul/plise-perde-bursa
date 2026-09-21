@@ -179,19 +179,19 @@ export default function ProductDetailClient({ product, similarProducts, initialS
 
               return (
                 <div className="flex items-center gap-2 mt-2">
-                  <div className="flex text-amber-400">
+                  <div className="flex text-[#C5A059]">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <Star
                         key={star}
-                        className={`w-3.5 h-3.5 ${star <= Math.round(avgScore) ? 'fill-current' : 'text-slate-200'}`}
+                        className={`w-3.5 h-3.5 ${star <= Math.round(avgScore) ? 'fill-current' : 'text-[#d7d7db]'}`}
                       />
                     ))}
                   </div>
-                  <span className="text-xs font-semibold text-slate-600">
+                  <span className="text-xs font-semibold text-[#151523]">
                     {revCount > 0 ? `(${revCount} Değerlendirme)` : '(0 Değerlendirme)'}
                   </span>
                   {product.brand && (
-                    <span className="ml-auto text-xs font-semibold text-slate-600 border border-slate-200 px-2 py-0.5 rounded-sm">
+                    <span className="ml-auto text-xs font-semibold text-[#151523] border border-[#d7d7db] px-2.5 py-0.5 rounded-full">
                       Marka: {product.brand.name}
                     </span>
                   )}
@@ -266,7 +266,7 @@ export default function ProductDetailClient({ product, similarProducts, initialS
       {/* BENZER ÜRÜNLER */}
       {similarProducts.length > 0 && (
         <section className="mb-12">
-          <h3 className="text-base font-extrabold text-slate-900 mb-4 border-b border-slate-200 pb-2">
+          <h3 className="text-base font-bold text-[#151523] mb-4 border-b border-[#d7d7db] pb-2">
             Benzer Perde Modelleri
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -274,17 +274,19 @@ export default function ProductDetailClient({ product, similarProducts, initialS
               <Link
                 key={sp.id}
                 href={`/urun/${sp.slug}`}
-                className="group bg-white border border-slate-200 hover:border-slate-400 p-2.5 rounded-sm transition flex flex-col justify-between"
+                className="group bg-white border border-[#d7d7db] hover:border-[#C5A059] p-2.5 rounded-xl transition flex flex-col justify-between shadow-xs hover:shadow-md"
               >
-                <img
-                  src={sp.images?.[0]?.imageUrl || '/static/sample/tulle_sample.jpg'}
-                  alt={sp.name}
-                  className="w-full aspect-4/5 object-cover rounded-sm mb-2"
-                />
-                <h4 className="text-xs font-bold text-slate-900 line-clamp-1 group-hover:text-[#1B84F8] transition">
+                <div className="rounded-[20px] overflow-hidden aspect-4/5 mb-2 bg-[#e9e9ec]">
+                  <img
+                    src={sp.images?.[0]?.imageUrl || '/static/sample/tulle_sample.jpg'}
+                    alt={sp.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <h4 className="text-xs font-bold text-[#151523] line-clamp-1 group-hover:text-[#C5A059] transition">
                   {sp.name}
                 </h4>
-                <span className="text-xs font-extrabold text-slate-950 mt-1">₺{sp.basePrice.toFixed(2)}</span>
+                <span className="text-xs font-bold text-[#151523] mt-1">₺{sp.basePrice.toFixed(2)}</span>
               </Link>
             ))}
           </div>

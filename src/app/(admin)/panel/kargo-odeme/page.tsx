@@ -54,7 +54,7 @@ export default function KargoOdemeAyarlariPage() {
   const [bankActive, setBankActive] = useState('1');
   const [bankDiscountRate, setBankDiscountRate] = useState('5');
   const [bankAccounts, setBankAccounts] = useState(
-    'Banka: QNB Finansbank\nAlıcı Ünvanı: Yazar Perde Tekstil Gıda İnş.Otomotiv Mobilya Turizm Dış Tic.San.ve Tic.LTD.ŞTİ.\nIBAN: TR00 0000 0000 0000 0000 0000 00\nŞube: Bursa Yıldırım Şubesi'
+    'Banka: QNB Finansbank\nAlıcı Ünvanı: Plise Perde Bursa\nIBAN: TR00 0000 0000 0000 0000 0000 00\nŞube: Bursa Yıldırım Şubesi'
   );
 
   // Kapıda Ödeme State

@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   if (!product) return { title: 'Ürün Bulunamadı' };
 
   return {
-    title: product.seoTitle || `${product.name} - Özel Ölçü Perde`,
-    description: product.seoDesc || product.shortDesc || `${product.name} en uygun fiyatlarla PerdeSiparisi.com'da.`,
+    title: product.seoTitle || `${product.name} - Özel Ölçü Plise Perde`,
+    description: product.seoDesc || product.shortDesc || `${product.name} en uygun fiyatlarla pliseperdebursa.com.tr'de.`,
     keywords: product.seoKeywords || undefined,
   };
 }

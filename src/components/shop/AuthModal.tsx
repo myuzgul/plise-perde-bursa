@@ -162,7 +162,7 @@ export default function AuthModal({ isOpen, onClose, initialTab = 'LOGIN', onSuc
         <div className="p-4 bg-slate-900 text-white flex items-center justify-between">
           <div className="flex gap-4">
             {tab === 'LEGACY_SETUP' ? (
-              <div className="flex items-center gap-2 text-xs font-black text-amber-400">
+              <div className="flex items-center gap-2 text-xs font-bold text-[#DFCE9E]">
                 <Sparkles className="w-4 h-4" />
                 <span>YENİ ŞİFRE BELİRLEME</span>
               </div>
@@ -174,8 +174,8 @@ export default function AuthModal({ isOpen, onClose, initialTab = 'LOGIN', onSuc
                     setTab('LOGIN');
                     setError(null);
                   }}
-                  className={`text-xs font-extrabold tracking-wider transition pb-1 border-b-2 cursor-pointer ${
-                    tab === 'LOGIN' ? 'border-[#1B84F8] text-[#1B84F8]' : 'border-transparent text-slate-400 hover:text-white'
+                  className={`text-xs font-bold tracking-wider transition pb-1 border-b-2 cursor-pointer ${
+                    tab === 'LOGIN' ? 'border-[#C5A059] text-[#C5A059]' : 'border-transparent text-[#b9b9c1] hover:text-white'
                   }`}
                 >
                   GİRİŞ YAP
@@ -186,8 +186,8 @@ export default function AuthModal({ isOpen, onClose, initialTab = 'LOGIN', onSuc
                     setTab('REGISTER');
                     setError(null);
                   }}
-                  className={`text-xs font-extrabold tracking-wider transition pb-1 border-b-2 cursor-pointer ${
-                    tab === 'REGISTER' ? 'border-[#1B84F8] text-[#1B84F8]' : 'border-transparent text-slate-400 hover:text-white'
+                  className={`text-xs font-bold tracking-wider transition pb-1 border-b-2 cursor-pointer ${
+                    tab === 'REGISTER' ? 'border-[#C5A059] text-[#C5A059]' : 'border-transparent text-[#b9b9c1] hover:text-white'
                   }`}
                 >
                   YENİ ÜYELİK
@@ -199,7 +199,7 @@ export default function AuthModal({ isOpen, onClose, initialTab = 'LOGIN', onSuc
           <button
             type="button"
             onClick={onClose}
-            className="p-1 text-slate-400 hover:text-white transition cursor-pointer"
+            className="p-1 text-[#b9b9c1] hover:text-white transition cursor-pointer"
           >
             <X className="w-4 h-4" />
           </button>
@@ -291,7 +291,7 @@ export default function AuthModal({ isOpen, onClose, initialTab = 'LOGIN', onSuc
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-2.5 bg-[#1B84F8] hover:bg-[#156cd1] disabled:opacity-50 text-white rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-md shadow-[#1B84F8]/20"
+                className="w-full py-3 bg-[#C5A059] hover:bg-[#B88E28] disabled:opacity-50 text-white rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-[0_2px_6px_rgba(0,0,0,0.2)]"
               >
                 <span>{loading ? 'Kaydediliyor...' : 'Şifremi Kaydet ve Giriş Yap'}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -304,7 +304,7 @@ export default function AuthModal({ isOpen, onClose, initialTab = 'LOGIN', onSuc
                     setTab('LOGIN');
                     setError(null);
                   }}
-                  className="text-xs text-slate-500 hover:text-slate-900 font-semibold"
+                  className="text-xs text-[#49495a] hover:text-[#151523] font-semibold"
                 >
                   Geri Dön
                 </button>
@@ -313,43 +313,43 @@ export default function AuthModal({ isOpen, onClose, initialTab = 'LOGIN', onSuc
           ) : tab === 'LOGIN' ? (
             <form onSubmit={handleLogin} className="space-y-4">
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">E-Posta Adresi *</label>
+                <label className="block text-xs font-bold text-[#151523] mb-1">E-Posta Adresi *</label>
                 <div className="relative">
-                  <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
+                  <Mail className="w-4 h-4 text-[#868694] absolute left-3 top-2.5" />
                   <input
                     type="email"
                     required
                     placeholder="ornek@mail.com"
                     value={loginEmail}
                     onChange={(e) => setLoginEmail(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-9 pr-3 py-2 text-xs text-slate-900 focus:outline-none focus:border-slate-900"
+                    className="w-full bg-white border border-[#d7d7db] rounded-lg pl-9 pr-3 py-2 text-xs text-[#151523] focus:outline-none focus:border-[#C5A059]"
                   />
                 </div>
               </div>
 
               <div>
                 <div className="flex items-center justify-between mb-1">
-                  <label className="text-xs font-bold text-slate-700">Şifreniz *</label>
+                  <label className="text-xs font-bold text-[#151523]">Şifreniz *</label>
                   <button
                     type="button"
                     onClick={() => {
                       onClose();
                       router.push('/sifremi-unuttum');
                     }}
-                    className="text-[11px] text-[#1B84F8] hover:underline cursor-pointer"
+                    className="text-[11px] text-[#C5A059] hover:underline cursor-pointer"
                   >
                     Şifremi Unuttum?
                   </button>
                 </div>
                 <div className="relative">
-                  <Lock className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
+                  <Lock className="w-4 h-4 text-[#868694] absolute left-3 top-2.5" />
                   <input
                     type="password"
                     required
                     placeholder="••••••••"
                     value={loginPassword}
                     onChange={(e) => setLoginPassword(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-300 rounded-xl pl-9 pr-3 py-2 text-xs text-slate-900 focus:outline-none focus:border-slate-900"
+                    className="w-full bg-white border border-[#d7d7db] rounded-lg pl-9 pr-3 py-2 text-xs text-[#151523] focus:outline-none focus:border-[#C5A059]"
                   />
                 </div>
               </div>
@@ -357,18 +357,18 @@ export default function AuthModal({ isOpen, onClose, initialTab = 'LOGIN', onSuc
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-2.5 bg-slate-900 hover:bg-slate-800 disabled:opacity-50 text-white rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+                className="w-full py-3 bg-[#C5A059] hover:bg-[#B88E28] disabled:opacity-50 text-white rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-[0_2px_6px_rgba(0,0,0,0.2)]"
               >
                 <span>{loading ? 'Giriş Yapılıyor...' : 'Giriş Yap'}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
 
-              <div className="pt-2 text-center text-xs text-slate-500">
+              <div className="pt-2 text-center text-xs text-[#49495a]">
                 Hesabınız yok mu?{' '}
                 <button
                   type="button"
                   onClick={() => setTab('REGISTER')}
-                  className="font-bold text-[#1B84F8] hover:underline cursor-pointer"
+                  className="font-bold text-[#C5A059] hover:underline cursor-pointer"
                 >
                   Hemen Üye Olun
                 </button>
@@ -448,18 +448,18 @@ export default function AuthModal({ isOpen, onClose, initialTab = 'LOGIN', onSuc
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-2.5 bg-[#1B84F8] hover:bg-[#156cd1] disabled:opacity-50 text-white rounded-sm text-xs font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-xs mt-2"
+                className="w-full py-3 bg-[#C5A059] hover:bg-[#B88E28] disabled:opacity-50 text-white rounded-xl text-xs font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-[0_2px_6px_rgba(0,0,0,0.2)] mt-2"
               >
                 <span>{loading ? 'Hesap Oluşturuluyor...' : 'Üyeliği Tamamla'}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
 
-              <div className="pt-1 text-center text-xs text-slate-500">
+              <div className="pt-1 text-center text-xs text-[#49495a]">
                 Zaten üye misiniz?{' '}
                 <button
                   type="button"
                   onClick={() => setTab('LOGIN')}
-                  className="font-bold text-slate-900 hover:underline"
+                  className="font-bold text-[#C5A059] hover:underline cursor-pointer"
                 >
                   Giriş Yapın
                 </button>

@@ -54,19 +54,19 @@ export default function CartDrawer({ freeShippingThreshold: initialThreshold = 1
           </div>
 
           {/* Ücretsiz Kargo İlerleme Çubuğu */}
-          <div className="p-3 bg-slate-50 border-b border-slate-200 text-xs">
+          <div className="p-3 bg-[#FAF5EB]/50 border-b border-[#d7d7db] text-xs">
             {remainingForFreeShipping > 0 ? (
-              <div className="space-y-1">
-                <div className="flex items-center justify-between text-[11px] font-semibold text-slate-700">
-                  <span className="flex items-center gap-1">
-                    <Truck className="w-3.5 h-3.5 text-[#1B84F8]" />
+              <div className="space-y-1.5">
+                <div className="flex items-center justify-between text-[11px] font-semibold text-[#49495a]">
+                  <span className="flex items-center gap-1.5">
+                    <Truck className="w-3.5 h-3.5 text-[#C5A059]" />
                     <span>Ücretsiz Kargo:</span>
                   </span>
-                  <span className="text-slate-900 font-bold">₺{remainingForFreeShipping.toFixed(2)} daha ekleyin</span>
+                  <span className="text-[#151523] font-bold">₺{remainingForFreeShipping.toFixed(2)} daha ekleyin</span>
                 </div>
-                <div className="w-full h-1 bg-slate-200 overflow-hidden rounded-full">
+                <div className="w-full h-1.5 bg-[#e9e9ec] overflow-hidden rounded-full">
                   <div
-                    className="h-full bg-[#1B84F8] transition-all duration-300"
+                    className="h-full bg-[#C5A059] transition-all duration-300"
                     style={{ width: `${freeShippingProgress}%` }}
                   />
                 </div>
@@ -80,7 +80,7 @@ export default function CartDrawer({ freeShippingThreshold: initialThreshold = 1
           </div>
 
           {/* Sepet Kalemleri Listesi */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 divide-y divide-slate-100">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 divide-y divide-[#e9e9ec]">
             {items.length > 0 ? (
               items.map((item) => {
                 const snap = item.calculationResult.selectedOptionsSnapshot as Record<string, any>;
@@ -89,16 +89,16 @@ export default function CartDrawer({ freeShippingThreshold: initialThreshold = 1
                     <img
                       src={item.imageUrl}
                       alt={item.name}
-                      className="w-16 h-20 object-cover rounded-sm border border-slate-200 shrink-0"
+                      className="w-16 h-20 object-cover rounded-xl border border-[#d7d7db] shrink-0"
                     />
 
                     <div className="flex-1 min-w-0 flex flex-col justify-between">
                       <div>
                         <div className="flex items-start justify-between gap-2">
-                          <h4 className="text-xs font-bold text-slate-900 line-clamp-1">{item.name}</h4>
+                          <h4 className="text-xs font-bold text-[#151523] line-clamp-1">{item.name}</h4>
                           <button
                             onClick={() => removeItem(item.id)}
-                            className="text-slate-400 hover:text-red-600 transition p-0.5 cursor-pointer"
+                            className="text-[#868694] hover:text-[#ff0000] transition p-0.5 cursor-pointer"
                             title="Kaldır"
                           >
                             <Trash2 className="w-3.5 h-3.5" />
@@ -106,8 +106,8 @@ export default function CartDrawer({ freeShippingThreshold: initialThreshold = 1
                         </div>
 
                         {/* Ölçü & Perde Detayları */}
-                        <div className="mt-1 text-[11px] text-slate-600 space-y-0.5">
-                          <div className="font-semibold text-slate-900 font-mono">
+                        <div className="mt-1 text-[11px] text-[#49495a] space-y-0.5">
+                          <div className="font-semibold text-[#151523] font-mono">
                             {item.width} x {item.height} cm ({item.calculationResult.calculatedArea} {item.calculationResult.areaUnit === 'SQM' ? 'm²' : 'm'})
                           </div>
                           {snap.pleatLabel && <div>Pile: {snap.pleatLabel}</div>}
@@ -120,26 +120,26 @@ export default function CartDrawer({ freeShippingThreshold: initialThreshold = 1
                       </div>
 
                       {/* Adet & Fiyat */}
-                      <div className="flex items-center justify-between mt-2 pt-1 border-t border-slate-100">
-                        <div className="flex items-center border border-slate-300 rounded-sm bg-white overflow-hidden text-xs">
+                      <div className="flex items-center justify-between mt-2 pt-2 border-t border-[#e9e9ec]">
+                        <div className="flex items-center border border-[#d7d7db] rounded-lg bg-white overflow-hidden text-xs">
                           <button
                             onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                            className="px-2 py-0.5 hover:bg-slate-100 text-slate-600 font-bold"
+                            className="px-2.5 py-1 hover:bg-[#FAF5EB] text-[#151523] font-bold"
                           >
                             -
                           </button>
-                          <span className="px-2 py-0.5 font-bold text-slate-900 text-xs">
+                          <span className="px-2 py-1 font-bold text-[#151523] text-xs">
                             {item.quantity}
                           </span>
                           <button
                             onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                            className="px-2 py-0.5 hover:bg-slate-100 text-slate-600 font-bold"
+                            className="px-2.5 py-1 hover:bg-[#FAF5EB] text-[#151523] font-bold"
                           >
                             +
                           </button>
                         </div>
 
-                        <span className="text-xs font-extrabold text-slate-950">
+                        <span className="text-xs font-bold text-[#151523]">
                           ₺{item.totalPrice.toFixed(2)}
                         </span>
                       </div>
@@ -148,34 +148,34 @@ export default function CartDrawer({ freeShippingThreshold: initialThreshold = 1
                 );
               })
             ) : (
-              <div className="py-16 text-center text-slate-400">
-                <ShoppingBag className="w-10 h-10 mx-auto mb-2 text-slate-300" />
-                <p className="text-xs font-bold text-slate-700">Sepetinizde ürün bulunmuyor</p>
-                <p className="text-[11px] text-slate-400 mt-0.5">Perde modellerini inceleyerek sepete ekleyebilirsiniz.</p>
+              <div className="py-16 text-center text-[#868694]">
+                <ShoppingBag className="w-10 h-10 mx-auto mb-2 text-[#d7d7db]" />
+                <p className="text-xs font-bold text-[#151523]">Sepetinizde ürün bulunmuyor</p>
+                <p className="text-[11px] text-[#49495a] mt-0.5">Perde modellerini inceleyerek sepete ekleyebilirsiniz.</p>
               </div>
             )}
           </div>
 
           {/* Footer */}
           {items.length > 0 && (
-            <div className="p-4 border-t border-slate-200 bg-slate-50 space-y-3">
-              <div className="flex items-center justify-between text-xs font-bold text-slate-900">
+            <div className="p-4 border-t border-[#d7d7db] bg-white space-y-3">
+              <div className="flex items-center justify-between text-xs font-bold text-[#151523]">
                 <span>Ara Toplam:</span>
-                <span className="text-base font-extrabold text-slate-950">₺{subtotal.toFixed(2)}</span>
+                <span className="text-base font-bold text-[#151523]">₺{subtotal.toFixed(2)}</span>
               </div>
 
               <div className="grid grid-cols-2 gap-2">
                 <Link
                   href="/sepet"
                   onClick={closeDrawer}
-                  className="py-2.5 px-3 rounded-sm border border-slate-300 bg-white hover:bg-slate-100 text-slate-800 text-xs font-bold text-center transition"
+                  className="py-3 px-3 rounded-xl border border-[#d7d7db] bg-white hover:bg-[#FAF5EB] text-[#151523] text-xs font-bold text-center transition"
                 >
                   Sepete Git
                 </Link>
                 <Link
                   href="/odeme"
                   onClick={closeDrawer}
-                  className="py-2.5 px-3 rounded-sm bg-[#1B84F8] hover:bg-[#156cd1] text-white text-xs font-bold text-center flex items-center justify-center gap-1 transition shadow-xs"
+                  className="py-3 px-3 rounded-xl bg-[#C5A059] hover:bg-[#B88E28] text-white text-xs font-bold text-center flex items-center justify-center gap-1.5 transition shadow-[0_2px_6px_rgba(0,0,0,0.2)]"
                 >
                   <span>Siparişi Tamamla</span>
                   <ArrowRight className="w-3.5 h-3.5" />

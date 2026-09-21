@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: StaticPageProps): Promise<Met
   if (!page) return { title: 'Sayfa Bulunamadı' };
 
   return {
-    title: page.seoTitle || `${page.title} - PerdeSiparisi.com`,
+    title: page.seoTitle || `${page.title} - Plise Perde Bursa`,
     description: page.seoDesc || `${page.title} hakkında detaylı bilgi.`,
   };
 }
@@ -53,8 +53,8 @@ export default async function DynamicStaticPage({ params }: StaticPageProps) {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
         {/* Sol Menü: Kurumsal Linkler */}
         <aside className="md:col-span-4 lg:col-span-3 space-y-4">
-          <div className="bg-white p-5 rounded-3xl border border-slate-200/80 shadow-xs">
-            <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-4 border-l-2 border-[#1B84F8] pl-2">
+          <div className="bg-white p-5 rounded-xl border border-[#d7d7db] shadow-xs">
+            <h3 className="text-xs font-bold text-[#151523] uppercase tracking-wider mb-4 border-l-2 border-[#C5A059] pl-2.5">
               Bilgi Merkezi
             </h3>
             <ul className="space-y-1.5 text-xs font-semibold">
@@ -62,10 +62,10 @@ export default async function DynamicStaticPage({ params }: StaticPageProps) {
                 <li key={p.slug}>
                   <Link
                     href={`/sayfalar/${p.slug}`}
-                    className={`block px-3 py-2 rounded-xl transition ${
+                    className={`block px-3 py-2 rounded-lg transition ${
                       p.slug === slug
-                        ? 'bg-[#1B84F8] text-white shadow-xs'
-                        : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                        ? 'bg-[#151523] text-white shadow-xs'
+                        : 'text-[#49495a] hover:bg-[#FAF5EB] hover:text-[#151523]'
                     }`}
                   >
                     {p.title}
@@ -75,19 +75,19 @@ export default async function DynamicStaticPage({ params }: StaticPageProps) {
             </ul>
           </div>
 
-          <div className="bg-blue-50/60 p-5 rounded-3xl border border-blue-100 text-xs text-slate-700 space-y-2">
-            <div className="flex items-center gap-1.5 font-bold text-[#1B84F8]">
-              <Sparkles className="w-4 h-4" />
+          <div className="bg-[#FAF5EB] p-5 rounded-xl border border-[#d7d7db] text-xs text-[#151523] space-y-2">
+            <div className="flex items-center gap-1.5 font-bold text-[#C5A059]">
+              <Sparkles className="w-4 h-4 text-[#C5A059]" />
               <span>Yardıma mı İhtiyacınız Var?</span>
             </div>
-            <p className="text-[11px] leading-relaxed">
+            <p className="text-[11px] leading-relaxed text-[#49495a]">
               Ölçü alma veya kumaş seçimi konusunda uzman perde danışmanlarımızla hemen iletişime geçebilirsiniz.
             </p>
             <a
-              href="tel:+905414945173"
-              className="inline-block font-bold text-slate-900 text-xs mt-1 hover:underline"
+              href="tel:+905327263474"
+              className="inline-block font-bold text-[#C5A059] text-xs mt-1 hover:underline"
             >
-              📞 0541 494 51 73
+              📞 0532 726 34 74
             </a>
           </div>
         </aside>

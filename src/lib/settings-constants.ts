@@ -80,12 +80,12 @@ export const DEFAULT_SETTINGS: SystemSettingsMap = {
   renso_piece_price: 100,
 
   default_vat_rate: 10,
-  site_title: "Yazar Perde - Özel Ölçülü Perde Sistemleri",
-  site_phone: "0541 494 51 73",
-  site_address: "Anadolu Mah. Atıcılar Cd. No: 1/A1, 16270 Yıldırım/Bursa",
-  site_email: "yazarperde@hotmail.com",
-  site_slogan: "Evinize Özel Ölçü, Kusursuz Dikiş",
-  site_discount_bar_text: "%40 İNDİRİM KAMPANYASI",
+  site_title: "Plise Perde Bursa - Özel Ölçülü Plise Perde Sistemleri",
+  site_phone: "0532 726 34 74",
+  site_address: "Davutdede, 2. Zümrüt Sk. No:29 D:31, 16000 Yıldırım/Bursa",
+  site_email: "info@pliseperdebursa.com.tr",
+  site_slogan: "Bursa'nın Lider Plise Perde Üreticisi • Özel Ölçü & Kusursuz Uyum",
+  site_discount_bar_text: "PLİSE PERDELERDE FABRİKADAN HALKA ÖZEL FİYATLAR",
 
   // Kargo
   shipping_company_name: "DHL Kargo (MNG Kargo)",
@@ -103,7 +103,7 @@ export const DEFAULT_SETTINGS: SystemSettingsMap = {
   // Havale / EFT
   payment_bank_transfer_active: 1,
   bank_transfer_discount_rate: 5,
-  bank_transfer_accounts: "Banka: QNB Finansbank\nAlıcı Ünvanı: Yazar Perde Tekstil Gıda İnş.Otomotiv Mobilya Turizm Dış Tic.San.ve Tic.LTD.ŞTİ.\nIBAN: TR00 0000 0000 0000 0000 0000 00\nŞube: Bursa Yıldırım Şubesi",
+  bank_transfer_accounts: "Banka: QNB Finansbank\nAlıcı Ünvanı: Plise Perde Bursa\nIBAN: TR00 0000 0000 0000 0000 0000 00\nŞube: Bursa Yıldırım Şubesi",
 
   // Kapıda Nakit Ödeme
   payment_cod_active: 1,

@@ -26,7 +26,7 @@ export default async function ShopLayout({
           {children}
         </div>
       </ShopClientWrapper>
-      <FloatingWhatsApp phone={settings.site_phone || '0541 494 51 73'} />
+      <FloatingWhatsApp phone={settings.site_phone || '0532 726 34 74'} />
       <Footer />
     </div>
   );

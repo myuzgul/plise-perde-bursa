@@ -56,14 +56,14 @@ export default function AdminSidebar() {
     <aside className="w-full lg:w-64 bg-slate-900 text-slate-300 flex flex-col shrink-0 min-h-screen border-r border-slate-800">
       <div className="p-4 border-b border-slate-800 flex items-center justify-between">
         <Link href="/panel" className="flex items-center gap-2">
-          <div className="bg-white p-1.5 rounded-sm">
+          <div className="bg-white p-1.5 rounded-lg">
             <img
-              src="/images/logo.jpg"
-              alt="Yazar Perde"
+              src="/images/logo.svg"
+              alt="Plise Perde Bursa"
               className="h-7 w-auto object-contain"
             />
           </div>
-          <span className="text-[10px] text-[#1B84F8] font-bold bg-[#1B84F8]/10 px-1.5 py-0.5 rounded border border-[#1B84F8]/20">
+          <span className="text-[10px] text-[#C5A059] font-bold bg-[#C5A059]/10 px-1.5 py-0.5 rounded border border-[#C5A059]/30">
             PANEL
           </span>
         </Link>
